@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Store Index</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Image Store Website</h1>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" onclick="validateForm()">Login</button>
+
+    <button onclick="openCreateUserPage()">Create New User</button>
+
+    <script>
+
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username == "" || password == "") {
+                alert("Please enter both username and password.");
+                return false;
+            }
+            else {
+                openImagePage();
+                return true;
+            }
+        }
+
+        function openImagePage() {
+            window.location.href = 'image.html';
+            console.log('Redirecting to: ' + window.location.href);
+        }
+        function openCreateUserPage() {
+            window.location.href = 'user.html'; // Adjust the path accordingly
+            console.log('Redirecting to: ' + window.location.href);
+        }
+    </script>
+</body>
+</html>
